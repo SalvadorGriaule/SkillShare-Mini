@@ -31,7 +31,7 @@ SkillShare Mini permet à chaque utilisateur de :
 
 ```bash
 # 1. Cloner le repo
-git clone https://github.com/SalvadorGriaule/Reze.git
+git clone https://github.com/SalvadorGriaule/SkillShare-Mini.git
 cd Reze
 
 # 2. Installer les dépendances PHP
