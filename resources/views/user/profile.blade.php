@@ -13,7 +13,7 @@
         </fieldset>
         <fieldset class="border-2 border-solid border-black p-2 flex flex-col">
             <legend class="text-2xl">Vos compétences</legend>
-            <a href="/profile/skill">addSkill</a>
+            <a href="/profile/skill" class="bg-orange-500 w-fit p-2 text-white rounded-2xl">add Skill</a>
             <ul>
                 @foreach ($info["listSkillOffered"] as $skill)
                 <li class="ml-2">

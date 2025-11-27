@@ -11,9 +11,9 @@
 </head>
 
 <body>
-    <header class="w-full flex justify-between items-center px-1.5">
+    <header class="w-full bg-orange-500 text-white flex justify-between items-center p-1.5">
         <a href="/">
-            <h1 class="text-3xl">Skill</h1>
+            <h1 class="text-3xl font-semibold">Skill</h1>
         </a>
         <nav>
             <ul class="flex space-x-1.5">

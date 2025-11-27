@@ -10,13 +10,13 @@
         </div>
     @endif
     <div class="p-2 rounded-md shadow-2xl my-2 w-4/5 lg:w-1/2">
-        <form class="flex flex-col space-y-2" action="/sign" method="POST">
+        <form class="flex flex-col items-center space-y-2" action="/sign" method="POST">
             @csrf
-            <input class="border-2 border-gray-500 border-solid p-1 placeholder:text-center" type="text"
+            <input class="border-2 w-full border-gray-500 border-solid p-1 placeholder:text-center" type="text"
                 value="{{ old('pseudo') }}" placeholder="pseudo" name="pseudo">
-            <input class="border-2 border-gray-500 border-solid p-1 placeholder:text-center" type="email"
+            <input class="border-2 w-full border-gray-500 border-solid p-1 placeholder:text-center" type="email"
                 value="{{ old('email') }}" placeholder="email" name="email" id="">
-            <input class="border-2 border-gray-500 border-solid p-1 placeholder:text-center" type="password"
+            <input class="border-2 w-full border-gray-500 border-solid p-1 placeholder:text-center" type="password"
                 placeholder="password" name="password" id="">
             <input class="bg-orange-500 rounded-lg text-white p-1 w-fit cursor-pointer" type="submit" value="Envoyer">
         </form>

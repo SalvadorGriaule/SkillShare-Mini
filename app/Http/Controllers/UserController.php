@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\Models\Skill;
+use App\Models\User;
 use App\Models\UserSkillOffered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -20,7 +20,7 @@ class UserController extends Controller
     public function profile(Request $request): View
     {
         $user = $request->user();
-        $info = User::with("listSkillOffered")->find($user->id);
+        $info = User::with('listSkillOffered')->find($user->id);
 
         return view('user.profile', [
             'info' => $info,
@@ -37,9 +37,9 @@ class UserController extends Controller
 
     public function public(string $id)
     {
-        $public = User::with("listSkillOffered")->find($id);
+        $public = User::with('listSkillOffered')->find($id);
 
-        return view("user.public",['public' => $public]);
+        return view('user.public', ['public' => $public]);
     }
 
     public function liste()
@@ -66,7 +66,10 @@ class UserController extends Controller
             'password' => Hash::make($request->input('password')),
         ]);
 
-        return redirect("/skill");
+        Auth::login($user);
+
+        return redirect('/');
+
     }
 
     /**
@@ -101,17 +104,21 @@ class UserController extends Controller
     public function edit(Request $request)
     {
         $user = $request->user();
-        return view('user.edit',["info" => $user]);
+
+        return view('user.edit', ['info' => $user]);
     }
 
-    public function addSkill(){
+    public function addSkill()
+    {
         $skill = Skill::all();
-        return view('user.addSkill',["skills" => $skill]);
+
+        return view('user.addSkill', ['skills' => $skill]);
     }
 
-    public function skillAdded(Request $request)  {
+    public function skillAdded(Request $request)
+    {
         $user = $request->user();
-        
+
         $skill = UserSkillOffered::create([
             'skill_id' => $request->input('skill'),
             'user_id' => $user->id,
